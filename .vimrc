@@ -15,6 +15,7 @@ Plugin 'VundleVim/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
 Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
 Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/syntastic'
 Plugin 'nathanaelkane/vim-indent-guides'
@@ -41,6 +42,9 @@ filetype plugin indent on    " required
 let mapleader=","
 syntax on
 filetype plugin indent on
+
+" Ctrl P
+set wildignore+=*/node_modules/*,*/bower_components/*
 
 " Linter
 " This does what it says on the tin. It will check your file on open too, not
