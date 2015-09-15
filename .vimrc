@@ -80,3 +80,4 @@ au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
 au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
 
 au FileType go nmap <Leader>s <Plug>(go-implements)
+
