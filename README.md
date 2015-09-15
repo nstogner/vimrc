@@ -1,5 +1,5 @@
 # Nick's vimrc
-This is my personal vimrc. It is setup for javascript development.
+This is my personal vimrc. It is setup for Javascript and Go development.
 
 ## Setup
 
