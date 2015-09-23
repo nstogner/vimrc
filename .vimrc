@@ -23,6 +23,8 @@ Plugin 'sickill/vim-monokai'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'mattn/emmet-vim'
 
+Plugin 'derekwyatt/vim-scala'
+
 Plugin 'fatih/vim-go'
 
 " All of your Plugins must be added before the following line
@@ -69,6 +71,8 @@ au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <leader>t <Plug>(go-test)
 au FileType go nmap <leader>c <Plug>(go-coverage)
+
+au FileType go nmap <leader>gi <Plug>(go-import)
 
 au FileType go nmap <Leader>ds <Plug>(go-def-split)
 au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
