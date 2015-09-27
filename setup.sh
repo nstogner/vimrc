@@ -22,3 +22,11 @@ vim +PluginInstall +qall
 
 title "Installing jshint via npm"
 sudo npm install -g jshint
+
+title "Installing YouCompleteMe"
+sudo apt-get install build-essential cmake
+sudo apt-get install python-dev
+cd ~/.vim/bundle/YouCompleteMe
+./install.py --gocode-completer
+cd -
+
