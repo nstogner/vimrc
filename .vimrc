@@ -19,7 +19,6 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/syntastic'
 Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'sickill/vim-monokai'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'Valloric/YouCompleteMe'
@@ -58,8 +57,8 @@ let g:syntastic_check_on_open=1
 
 " Colors
 set t_Co=256
-set background=dark
-colorscheme monokai
+"set background=dark
+colorscheme molokai
 
 " Javascript indention
 let g:indent_guides_start_level=2
