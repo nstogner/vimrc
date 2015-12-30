@@ -57,8 +57,10 @@ let g:syntastic_check_on_open=1
 
 " Colors
 set t_Co=256
-"set background=dark
+" set background=dark
 colorscheme molokai
+" allow transparent bg
+hi Normal ctermbg=none
 
 " Javascript indention
 let g:indent_guides_start_level=2
