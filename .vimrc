@@ -22,6 +22,7 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'bendavis78/vim-polymer'
 
 Plugin 'derekwyatt/vim-scala'
 
