@@ -42,6 +42,9 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+" Ctrl-P ignore list
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
+
 let mapleader=","
 syntax on
 filetype plugin indent on
