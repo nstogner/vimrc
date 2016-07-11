@@ -9,8 +9,8 @@ function title {
   printf "${NC}"
 }
 
-title "Installing vundle"
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+# title "Installing vundle"
+# git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 title "Linking .vimrc"
 cp ~/.vimrc ~/.vimrc.old
@@ -23,10 +23,5 @@ vim +PluginInstall +qall
 title "Installing jshint via npm"
 sudo npm install -g jshint
 
-title "Installing YouCompleteMe"
-sudo apt-get install build-essential cmake
-sudo apt-get install python-dev
-cd ~/.vim/bundle/YouCompleteMe
-./install.py --gocode-completer
-cd -
-
+title "Installing vim w/ lua"
+brew install vim --with-lua
