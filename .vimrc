@@ -60,6 +60,10 @@ set wildignore+=*/node_modules/*,*/bower_components/*
 " just on save.
 " You might not want this, so just leave it out if you don't.
 let g:syntastic_check_on_open=1
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+
+let g:go_list_type = "quickfix"
 
 " Colors
 set t_Co=256
@@ -96,7 +100,8 @@ au FileType go nmap <Leader>e <Plug>(go-rename)
 " Go syntax-highlighting
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_types = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 
