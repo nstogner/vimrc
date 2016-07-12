@@ -5,15 +5,10 @@ filetype off                  " required
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Raimondi/delimitMate'
@@ -21,64 +16,60 @@ Plugin 'scrooloose/syntastic'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'mattn/emmet-vim'
-" Plugin 'Valloric/YouCompleteMe'
 Plugin 'Shougo/neocomplete.vim'
-
 Plugin 'derekwyatt/vim-scala'
-
 Plugin 'fatih/vim-go'
-
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
 " Brief help
 " :PluginList       - lists configured plugins
 " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
 " :PluginSearch foo - searches for foo; append `!` to refresh local cache
 " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
+
 " Put your non-Plugin stuff after this line
 
+""" Code Completion (neocompete)
 let g:neocomplete#enable_at_startup = 1
 
-" Ctrl-P ignore list
-let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
+""" Misc
+" New line split (useful for fn defs)
+imap <C-c> <CR><Esc>O
 
+""" Ctrl-P
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
 let mapleader=","
 syntax on
 filetype plugin indent on
-
-" Ctrl P
 set wildignore+=*/node_modules/*,*/bower_components/*
 
-" Linter
-" This does what it says on the tin. It will check your file on open too, not
-" just on save.
-" You might not want this, so just leave it out if you don't.
+""" Syntastic
 let g:syntastic_check_on_open=1
-let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
-let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+let g:syntastic_go_checkers = ['go', 'golint', 'govet', 'errcheck']
+" let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 let g:go_list_type = "quickfix"
 
-" Colors
+""" Colors
 set t_Co=256
 " set background=dark
 colorscheme molokai
 " allow transparent bg
 hi Normal ctermbg=none
 
-" Javascript indention
+""" Javascript 
 let g:indent_guides_start_level=2
 
-" New line split (useful for fn defs)
-imap <C-c> <CR><Esc>O
-
-" Go mappings
+""" Go (vim-go)
 au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <leader>t <Plug>(go-test)
@@ -107,4 +98,3 @@ let g:go_highlight_build_constraints = 1
 
 " Run go import on write
 let g:go_fmt_command = "goimports"
-
