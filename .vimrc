@@ -7,6 +7,9 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 noremap <Space> <Nop>
 let mapleader="\<Space>"
 
+" Writes before building
+set autowrite
+
 nmap <Leader>q :q<CR>
 nmap <Leader>w :w<CR>
 
@@ -68,7 +71,7 @@ filetype plugin indent on
 set wildignore+=*/node_modules/*,*/bower_components/*
 
 """ Syntastic
-let g:syntastic_loc_list_height=3
+let g:syntastic_loc_list_height=5
 let g:syntastic_check_on_open=1
 let g:syntastic_go_checkers = ['go', 'golint', 'govet', 'errcheck']
 " let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
@@ -97,7 +100,7 @@ let g:indent_guides_start_level=2
 au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <leader>t <Plug>(go-test)
-au FileType go nmap <leader>c <Plug>(go-coverage)
+au FileType go nmap <leader>c <Plug>(go-coverage-toggle)
 
 au FileType go nmap <Leader>ds <Plug>(go-def-split)
 au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
