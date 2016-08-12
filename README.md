@@ -5,6 +5,12 @@ When insert:
 <C-c>  -  Create/Goto New Line
 
 When normal:
+<Space> q  -  Quit
+<Space> w  -  Write
+
+<Space> y  -  Copy
+<Space> p  -  Paste
+
 <C-h>  -  Left Window
 <C-j>  -  Down Window
 <C-k>  -  Right Window

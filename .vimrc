@@ -7,10 +7,21 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 noremap <Space> <Nop>
 let mapleader="\<Space>"
 
+nmap <Leader>q :q<CR>
+nmap <Leader>w :w<CR>
+
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
+" Copy/Paste from clipboard
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
 
 " VUNDLE
 " set the runtime path to include Vundle and initialize
