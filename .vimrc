@@ -1,7 +1,18 @@
-" VUNDLE
 set nocompatible              " be iMproved, required
 filetype off                  " required
+set number
+set ruler
+set colorcolumn=80
+highlight ColorColumn ctermbg=0 guibg=lightgrey
+noremap <Space> <Nop>
+let mapleader="\<Space>"
 
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" VUNDLE
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -34,17 +45,19 @@ filetype plugin indent on    " required
 let g:neocomplete#enable_at_startup = 1
 
 """ Misc
+" Backspace magic
+set backspace=indent,eol,start
 " New line split (useful for fn defs)
 imap <C-c> <CR><Esc>O
 
 """ Ctrl-P
-let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
-let mapleader=","
+let g:ctrlp_custom_ignore = '\v[\/](vendor|node_modules|target|dist)|(\.(swp|ico|git|svn))$'
 syntax on
 filetype plugin indent on
 set wildignore+=*/node_modules/*,*/bower_components/*
 
 """ Syntastic
+let g:syntastic_loc_list_height=3
 let g:syntastic_check_on_open=1
 let g:syntastic_go_checkers = ['go', 'golint', 'govet', 'errcheck']
 " let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
@@ -85,6 +98,7 @@ au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
 au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
 
 au FileType go nmap <Leader>s <Plug>(go-implements)
+au FileType go nmap <Leader>f <Plug>(go-referrers)
 au FileType go nmap <Leader>i <Plug>(go-info)
 au FileType go nmap <Leader>e <Plug>(go-rename)
 
