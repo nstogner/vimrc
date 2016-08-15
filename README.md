@@ -26,9 +26,8 @@ When normal:
 <Space> i  -  Go Info
 <Space> e  -  Go Rename
 
+<Space> df -  Go Def (Same Window)
 <Space> ds -  Go Def Split
-<Space> dv -  Go Def Vertical
-<Space> dt -  Go Def Tab
 
 <Space> gd -  Go Doc
 <Space> gv -  Go Doc Browser
